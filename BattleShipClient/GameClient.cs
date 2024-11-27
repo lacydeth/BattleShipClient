@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +19,6 @@ namespace BattleShipClient
                 tcpClient = new TcpClient(ipAddress, port);
                 stream = tcpClient.GetStream();
                 IsConnected = true;
-
-                // Start listening for server responses
                 StartReceiving();
             }
             catch (Exception ex)
@@ -66,14 +62,8 @@ namespace BattleShipClient
 
         private void ProcessServerResponse(string response)
         {
-            if (response.StartsWith("HIT"))
-            {
-                // Handle hit response (e.g., update UI to indicate a hit)
-            }
-            else if (response.StartsWith("MISS"))
-            {
-                // Handle miss response (e.g., update UI to indicate a miss)
-            }
+            // Handle server messages (e.g., HIT, MISS, WIN, LOSE)
+            Console.WriteLine($"Server response: {response}");
         }
     }
 }
