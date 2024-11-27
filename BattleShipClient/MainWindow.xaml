@@ -1,15 +1,24 @@
 ﻿<Window x:Class="BattleShipClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BattleShip Game Client" Height="450" Width="800">
+        Title="BattleShip Game Client" Height="600" Width="800">
     <Grid>
         <UniformGrid Name="PlayerGrid" Rows="10" Columns="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="300" Margin="10"/>
 
         <UniformGrid Name="OpponentGrid" Rows="10" Columns="10" HorizontalAlignment="Right" VerticalAlignment="Top" Width="300" Height="300" Margin="10"/>
 
+        <!-- Ship Selection Section -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+            <Label Content="Select a Ship to Place" FontSize="14" HorizontalAlignment="Center"/>
+            <ListBox Name="ShipListBox" SelectionChanged="ShipListBox_SelectionChanged" Height="120" Width="150">
+                <!-- Ships are automatically populated in the ListBox -->
+            </ListBox>
+            <CheckBox Name="IsHorizontalCheckBox" Content="Place Horizontally" HorizontalAlignment="Center" Margin="5"/>
+        </StackPanel>
+
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
-            <Label Name="StatusLabel" Content="Status: Not Connected" FontSize="14" />
-            <Button Name="ConnectButton" Content="Connect to Server" Click="ConnectButton_Click" Width="200" Height="30"/>
+            <Button Name="ConnectButton" Content="Connect" Click="ConnectButton_Click" Width="100" Height="30"/>
+            <Label Name="StatusLabel" Content="Status: Not connected" HorizontalAlignment="Center" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>
