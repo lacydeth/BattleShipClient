@@ -10,9 +10,10 @@
         <!-- Ship Selection Section -->
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
             <Label Content="Select a Ship to Place" FontSize="14" HorizontalAlignment="Center"/>
-            <ListBox Name="ShipListBox" SelectionChanged="ShipListBox_SelectionChanged" Height="120" Width="150">
-                <!-- Ships are automatically populated in the ListBox -->
-            </ListBox>
+            <ListBox Name="ShipListBox" 
+         SelectionChanged="ShipListBox_SelectionChanged" 
+         DisplayMemberPath="Name" 
+         Height="200" Width="120" />
             <CheckBox Name="IsHorizontalCheckBox" Content="Place Horizontally" HorizontalAlignment="Center" Margin="5"/>
         </StackPanel>
 
